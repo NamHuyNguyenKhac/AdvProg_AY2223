@@ -30,7 +30,7 @@ double myCos(double x) {
         double: sine of x
 ***/
 double mySin(double x){
-    double sin = x - 1.0 / 6.0 * pow(x, 3) + 1.0 / 120.0 * pow(x, 5) - 1.0 / 5040.0 * pow(x, 7);
+    double sin = x - 1.0 / 6.0 * pow(x, 3) + 1.0 / 120.0 * pow(x, 5) - 1.0 / 5040.0 * pow(x, 7)+ 1.0 / 362880.0 * pow(x, 9);
     return sin;
 }
 
