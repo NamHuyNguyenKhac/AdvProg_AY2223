@@ -1,20 +1,22 @@
 #include "painter.h"
 
 /***
-    Args: color (SDL_Color): color value 
-        
+    Args: color (SDL_Color): color value
+
     Returns:
         None
 ***/
-void Painter::setColor(SDL_Color color) 
-{ 
+void Painter::setColor(SDL_Color color)
+{
     // TODO: set the color value for the Painter and set Render Draw Color
+    (this->color) = color;
+    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 }
 
 
 /***
     Args: numPixel (int): number of pixel for jumping forward
-        
+
     Returns:
         None
 ***/
@@ -26,7 +28,7 @@ void Painter::jumpForward(int numPixel)
 
 /***
     Args: numPixel (int): number of pixel for jumping backward
-        
+
     Returns:
         None
 ***/
@@ -38,36 +40,36 @@ void Painter::jumpBackward(int numPixel)
 
 /***
     Args: degree (double): the value of rotation angle
-        
+
     Returns:
         None
-***/       
+***/
 void Painter::turnLeft(double degree)
 {
-    // TODO: rotate left the painter   
+    // TODO: rotate left the painter
 }
 
 
 /***
     Args: degree (double): the value of rotation angle
-        
+
     Returns:
         None
-***/     
+***/
 void Painter::turnRight(double degree)
 {
-    // TODO: rotate right the painter   
+    // TODO: rotate right the painter
 }
 
-/***  
-    Args: 
+/***
+    Args:
         None
     Returns:
         None
 ***/
 void Painter::randomColor()
 {
-    // TODO: set random color    
+    // TODO: set random color
 }
 
 
@@ -78,7 +80,7 @@ void Painter::clearWithBgColor(SDL_Color bgColor)
 {
     SDL_Color curColor = color;
     setColor(bgColor);
-	SDL_RenderClear(renderer);    
+	SDL_RenderClear(renderer);
     setColor(curColor);
 }
 
@@ -140,7 +142,7 @@ void Painter::createParallelogram(int size)
         turnLeft(60);
         moveForward(size);
         turnLeft(120);
-    }	
+    }
 }
 
 
